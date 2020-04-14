@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component, Fragment} from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Routes from "./Routes";
+import {ToastContainer} from "react-toastify";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Container from "@material-ui/core/Container";
+import AppToolbar from "./components/UI/Toolbar/AppToolbar";
+
+class App extends Component {
+  render() {
+    return (
+        <Fragment>
+          <CssBaseline/>
+          <ToastContainer autoClose={2000} />
+          <AppToolbar/>
+          <Container maxWidth="xl">
+            <Routes/>
+          </Container>
+        </Fragment>
+    );
+  }
 }
 
 export default App;
